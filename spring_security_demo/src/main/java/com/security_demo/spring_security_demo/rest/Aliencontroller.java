@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.security_demo.spring_security_demo.model.Alien;
 
+import jakarta.servlet.http.HttpServletRequest;
+
 @RestController
 public class Aliencontroller {
 	
@@ -29,5 +31,17 @@ public class Aliencontroller {
 		list.add(alien);
 		System.out.println(list);
 	}
+	
+	@GetMapping("/course-info")
+	public String getCourseInfo(HttpServletRequest request)
+	{
+		return "This is the course from the "+request.getSession().getId();
+	}
+	
+	public String getMoreCourseInfo(HttpServletRequest request)
+	{
+		return "This is about the all courses "+request.getSession().getId();
+	}
+	
 
 }
