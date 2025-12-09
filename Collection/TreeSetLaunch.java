@@ -23,9 +23,6 @@ public class TreeSetLaunch {
         System.out.println(ta.tailSet(300));
         System.out.println(ta.headSet(300));
 
-
-
-
     }
     
 }
