@@ -3,6 +3,7 @@ package com.security_demo.spring_security_demo.rest;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -43,5 +44,10 @@ public class Aliencontroller {
 		return "This is about the all courses "+request.getSession().getId();
 	}
 	
+	@GetMapping("/csrf")
+	public CsrfToken getCsrftoken(HttpServletRequest request)
+	{
+		return (CsrfToken)request.getAttribute("_csrf");
+	}
 
 }
