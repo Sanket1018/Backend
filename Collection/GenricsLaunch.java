@@ -20,11 +20,6 @@ class Employee{
     }
 }
 
-
-
-
-
-
 public class GenricsLaunch {
     public static void main(String[] args) {
         ArrayList al = new ArrayList<>();
