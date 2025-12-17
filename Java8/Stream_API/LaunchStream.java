@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class LaunchStream {
@@ -20,11 +22,35 @@ public class LaunchStream {
 
         Stream<Integer> streamData1 = list.stream();
         Stream<Integer>sortedStream = streamData1.sorted();
-
         sortedStream.forEach((n) -> {System.out.println(n);});
-        // one steam can be used only one time
 
-        
+
+        Stream<Integer> streamData = list.stream();
+        // one steam can be used only one time
+        Stream<Integer> streamData2 = streamData.map(n-> n*2);
+        streamData2.forEach(n -> {System.out.println(n);});
+
+        // OR
+        // Chaining the methods
+        list.stream()
+        .sorted()
+        .map(n -> n*2).forEach((n)-> System.out.println(n));
+
+
+        // copy a list to set using stream
+
+        List<String> newList = new ArrayList<>();
+        newList.add("Sanket");
+        newList.add("Akash");
+        newList.add("Rohan");
+        newList.add("Akshay");
+        newList.add("Sanket");
+
+        Set<String> unique_set = newList.stream().collect(Collectors.toSet());
+        // printing the set
+        System.out.println(unique_set);
+
+
 
         
     }
