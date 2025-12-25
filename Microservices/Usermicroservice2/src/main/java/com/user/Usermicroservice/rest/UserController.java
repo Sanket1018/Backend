@@ -19,7 +19,7 @@ public class UserController {
 	@Autowired
 	private Environment env;
 	
-	@GetMapping("course/course-info")
+	@GetMapping("/course/course-info")
 	public ResponseEntity<String> getCourseInfo()
 	{
 		String portNo = env.getProperty("server.port");
