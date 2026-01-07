@@ -1,8 +1,10 @@
 package com.hospital.hospitalproject.repository;
 
+import com.hospital.hospitalproject.dto.CountBloodGroupResponseDTO;
 import com.hospital.hospitalproject.entity.Patient;
 import com.hospital.hospitalproject.type.BloodGroup;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
@@ -23,7 +25,23 @@ public interface PatientRepository extends JpaRepository<Patient,Long> {
 //    @Query("SELECT p from Patient p where p.bloodGroup = ? 1")
 //    List<Patient> findByBloodGroup( @Param("bloodGroup") BloodGroup bloodGroup);
 
+    // count patient by blood group
     @Query("SELECT p FROM Patient p WHERE p.bloodGroup = :bloodGroup")
     List<Patient> findByBloodGroup(@Param("bloodGroup") BloodGroup bloodGroup);
 
+    // Group the patient according to the blood group
+    // DTO projection
+    @Query("select new com.hospital.hospitalproject.dto.CountBloodGroupResponseDTO( p.bloodGroup," + " Count(p))from Patient p GROUP BY p.bloodGroup")
+    List<CountBloodGroupResponseDTO> findCountOfBloodGroup();
+
+
+    // Native queries
+    @Query(value = "select * from patient",nativeQuery = true)
+    List<Patient> findAllPatients();
+
+
+    // update query
+    @Modifying
+    @Query("update Patient p set p.name= :name Where p.id= :id")
+    int updatedNameAndId(@Param("name") String name,@Param("id") Long id);
 }

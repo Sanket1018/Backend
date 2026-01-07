@@ -22,7 +22,7 @@ public class PatientService {
         System.out.println(p1==p2);
 
         // Dirty checking we are able to set the values into db directly
-        p1.setName("Rohit");
+        // p1.setName("Rohit");
         return p1;
     }
 

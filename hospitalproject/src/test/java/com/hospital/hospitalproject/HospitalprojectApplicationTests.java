@@ -1,5 +1,6 @@
 package com.hospital.hospitalproject;
 
+import com.hospital.hospitalproject.dto.CountBloodGroupResponseDTO;
 import com.hospital.hospitalproject.entity.Patient;
 import com.hospital.hospitalproject.repository.PatientRepository;
 import com.hospital.hospitalproject.service.PatientService;
@@ -7,6 +8,7 @@ import com.hospital.hospitalproject.type.BloodGroup;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -32,6 +34,7 @@ class HospitalprojectApplicationTests {
     }
 
     @Test
+    @Transactional
     public void  testTransansactionalsMethods()
     {
         Patient p1 = patientRepository.findById(1L).orElseThrow();
@@ -59,6 +62,38 @@ class HospitalprojectApplicationTests {
         {
             System.out.println(p);
         }
+
+        // find the count of patients by blood group
+
+        List<CountBloodGroupResponseDTO> patientList3 = patientRepository.findCountOfBloodGroup();
+
+        for(CountBloodGroupResponseDTO responseList: patientList3)
+        {
+            System.out.println(responseList);
+        }
+
+        // find all patients by native query
+        List<Patient> patientList4 = patientRepository.findAllPatients();
+
+        for(Patient p:patientList4)
+        {
+            System.out.println(p);
+        }
+
+        // update the patients
+        int count = patientRepository.updatedNameAndId("Arav Sharma",1L);
+        System.out.println(count+" rows affected");
+
+        // returning blood group count response dto through query for specific returning data
+        // Project dto
+        List<CountBloodGroupResponseDTO> response = patientRepository.findCountOfBloodGroup();
+
+        for(CountBloodGroupResponseDTO p:response)
+        {
+            System.out.println(response);
+        }
+
+
     }
 
 }
