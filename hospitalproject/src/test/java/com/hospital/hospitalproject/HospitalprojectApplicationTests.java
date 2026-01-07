@@ -3,6 +3,7 @@ package com.hospital.hospitalproject;
 import com.hospital.hospitalproject.entity.Patient;
 import com.hospital.hospitalproject.repository.PatientRepository;
 import com.hospital.hospitalproject.service.PatientService;
+import com.hospital.hospitalproject.type.BloodGroup;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -52,10 +53,12 @@ class HospitalprojectApplicationTests {
             System.out.println(p);
         }
 
+        List<Patient> patientsList2 = patientRepository.findByBloodGroup(BloodGroup.A_NEGATIVE);
 
-
-
-
+        for(Patient p:patientsList2)
+        {
+            System.out.println(p);
+        }
     }
 
 }
