@@ -7,6 +7,7 @@ import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 
 @Entity
@@ -44,6 +45,14 @@ public class Patient{
     @CreationTimestamp
     @Column(updatable = false)
     private LocalDateTime createdAt;
+
+    @OneToOne
+    @JoinColumn(name="insurance_id")
+    private Insurance insurance; // owning side
+
+    @Column
+    @OneToMany(mappedBy = "patient")
+    private List<Appointment> appointments;
 
     @Override
     public String toString() {

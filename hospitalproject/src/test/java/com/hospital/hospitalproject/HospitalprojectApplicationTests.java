@@ -8,6 +8,9 @@ import com.hospital.hospitalproject.type.BloodGroup;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
@@ -73,7 +76,7 @@ class HospitalprojectApplicationTests {
         }
 
         // find all patients by native query
-        List<Patient> patientList4 = patientRepository.findAllPatients();
+       Page<Patient> patientList4 = patientRepository.findAllPatients(PageRequest.of(1, 2,Sort.by("patient_name")));
 
         for(Patient p:patientList4)
         {
