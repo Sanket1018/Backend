@@ -3,6 +3,7 @@ package com.hospital.hospitalproject.entity;
 import com.hospital.hospitalproject.type.BloodGroup;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.ToString;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDate;
@@ -46,12 +47,13 @@ public class Patient{
     @Column(updatable = false)
     private LocalDateTime createdAt;
 
-    @OneToOne
-    @JoinColumn(name="insurance_id")
+    @OneToOne(cascade = {CascadeType.MERGE,CascadeType.PERSIST})
+    @JoinColumn(name="patient_insurance_id")
     private Insurance insurance; // owning side
 
     @Column
-    @OneToMany(mappedBy = "patient")
+    @OneToMany(mappedBy = "patient",fetch = FetchType.EAGER)
+    @ToString.Exclude
     private List<Appointment> appointments;
 
     @Override
