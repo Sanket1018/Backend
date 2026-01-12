@@ -5,9 +5,11 @@ import com.hospital.hospitalproject.entity.Insurance;
 import com.hospital.hospitalproject.entity.Patient;
 import com.hospital.hospitalproject.service.AppointmentService;
 import com.hospital.hospitalproject.service.InsuranceService;
+import jakarta.persistence.EntityNotFoundException;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -29,7 +31,11 @@ public class InsuranceTest {
                 .validUntil(LocalDate.of(2030,12,12))
                 .build();
 
-        Patient patient = insuranceService.assignInsuranceToPatient(insurance,2L);
+        Patient patient = insuranceService.assignInsuranceToPatient(insurance,1L);
+        System.out.println(patient);
+
+        var newPatient = insuranceService.disaccosicateInsuranceFromPatient(patient.getId());
+        System.out.println(newPatient);
     }
 
     @Test
@@ -42,5 +48,12 @@ public class InsuranceTest {
 
         var newAppointment = appointmentService.createNewAppointment(1L,1L,appointment);
         System.out.println(newAppointment);
+
+        var updatedAppointment = appointmentService.reassignAppointment(newAppointment.getId(),3L);
+        System.out.println(updatedAppointment);
     }
+
+
+
+
 }

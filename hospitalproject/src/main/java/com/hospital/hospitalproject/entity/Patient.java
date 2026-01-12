@@ -47,12 +47,12 @@ public class Patient{
     @Column(updatable = false)
     private LocalDateTime createdAt;
 
-    @OneToOne(cascade = {CascadeType.MERGE,CascadeType.PERSIST})
+    @OneToOne(cascade = {CascadeType.ALL},orphanRemoval = true,fetch = FetchType.EAGER)
     @JoinColumn(name="patient_insurance_id")
     private Insurance insurance; // owning side
 
     @Column
-    @OneToMany(mappedBy = "patient",fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "patient",fetch = FetchType.LAZY)
     @ToString.Exclude
     private List<Appointment> appointments;
 

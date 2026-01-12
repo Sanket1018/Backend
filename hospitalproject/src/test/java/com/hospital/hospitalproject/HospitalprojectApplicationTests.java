@@ -27,11 +27,11 @@ class HospitalprojectApplicationTests {
 	@Test
     public void testPatientRepository()
     {
-        List<Patient> patientList= patientRepository.findAll();
+        List<Patient> patientList= patientRepository.findAllAppointments();
         System.out.println(patientList);
 
         Patient p1 = new Patient();
-        //patientRepository.save(p1); // patient saved into db
+        patientRepository.save(p1); // patient saved into db
 
         // enitymanager internally calls persist
     }
@@ -95,6 +95,8 @@ class HospitalprojectApplicationTests {
         {
             System.out.println(response);
         }
+
+
 
 
     }

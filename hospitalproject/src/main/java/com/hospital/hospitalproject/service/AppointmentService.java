@@ -35,7 +35,7 @@ public class AppointmentService {
         appointment.setPatient(patient);
         appointment.setDoctor(doctor);
 
-        patient.getAppointments().add(appointment);
+        patient.getAppointments().add(appointment);  //bidirectional
 
         return appointmentRepository.save(appointment);
     }
@@ -50,11 +50,10 @@ public class AppointmentService {
         appointment.setDoctor(doctor);
 
         // And always check and maintain bidirectional consistency
-        doctor.getAppointments
-
-                ().add(appointment);
-
+        doctor.getAppointments().add(appointment);
         return appointment;
     }
+
+
 
 }
