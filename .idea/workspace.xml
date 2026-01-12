@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a7d7d7e8-40d3-43de-91d8-55e3d9d24479" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/hospitalproject/src/main/java/com/hospital/hospitalproject/entity/Appointment.java" beforeDir="false" afterPath="$PROJECT_DIR$/hospitalproject/src/main/java/com/hospital/hospitalproject/entity/Appointment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hospitalproject/src/main/java/com/hospital/hospitalproject/entity/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/hospitalproject/src/main/java/com/hospital/hospitalproject/entity/Patient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hospitalproject/src/main/java/com/hospital/hospitalproject/repository/PatientRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/hospitalproject/src/main/java/com/hospital/hospitalproject/repository/PatientRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hospitalproject/src/main/java/com/hospital/hospitalproject/service/AppointmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/hospitalproject/src/main/java/com/hospital/hospitalproject/service/AppointmentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hospitalproject/src/main/java/com/hospital/hospitalproject/service/InsuranceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/hospitalproject/src/main/java/com/hospital/hospitalproject/service/InsuranceService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hospitalproject/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/hospitalproject/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hospitalproject/src/main/resources/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/hospitalproject/src/main/resources/data.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hospitalproject/src/test/java/com/hospital/hospitalproject/HospitalprojectApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/hospitalproject/src/test/java/com/hospital/hospitalproject/HospitalprojectApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hospitalproject/src/test/java/com/hospital/hospitalproject/InsuranceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/hospitalproject/src/test/java/com/hospital/hospitalproject/InsuranceTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 2
+}]]></component>
+  <component name="ProjectId" id="38AqCkmGP4XVxbqH9ea1wFfts5y" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true"
+  }
+}]]></component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a7d7d7e8-40d3-43de-91d8-55e3d9d24479" name="Changes" comment="" />
+      <created>1768252600694</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1768252600694</updated>
+    </task>
+    <servers />
+  </component>
+</project>

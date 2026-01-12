@@ -7,7 +7,7 @@ public class LaunchingMultithradingNeed {
         Gamma gamma = new Gamma();
 
         alpha.start();
-        alpha.join(); /// wait for alpha to finish
+        alpha.join(); /// main thread wait for alpha to finish
 
         beta.start();
         beta.join();
