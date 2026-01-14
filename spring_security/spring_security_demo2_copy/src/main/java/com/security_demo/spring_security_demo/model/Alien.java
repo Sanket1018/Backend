@@ -1,7 +1,9 @@
 package com.security_demo.spring_security_demo.model;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
+@Entity
 public class Alien {
 	@Id
 	private Integer id;
