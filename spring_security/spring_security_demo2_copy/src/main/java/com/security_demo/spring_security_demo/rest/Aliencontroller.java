@@ -58,7 +58,7 @@ public class Aliencontroller {
 		return (CsrfToken)request.getAttribute("_csrf");
 	}
 	
-	@PostMapping("/rgister")
+	@PostMapping("/register")
 	public Users register(Users users)
 	{
 		return service.register(users);
